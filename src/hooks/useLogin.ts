@@ -8,6 +8,7 @@ import { loginService, LoginInputsInterface } from "services/auth";
 
 const schema = Yup.object().shape({
   email: Yup.string().required("Email is required").email("Invalid email"),
+  password: Yup.string().required("Password is required"),
 });
 
 const useLogin = () => {
