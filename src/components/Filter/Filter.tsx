@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Flex, Text } from "@mantine/core";
 
 import FilterOption, {
