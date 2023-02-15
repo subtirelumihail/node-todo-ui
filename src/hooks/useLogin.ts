@@ -1,6 +1,5 @@
 import { useForm, yupResolver } from "@mantine/form";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
 import { showNotification } from "@mantine/notifications";
 import { useMutation } from "@tanstack/react-query";
 
@@ -12,7 +11,6 @@ const schema = Yup.object().shape({
 });
 
 const useLogin = () => {
-  const navigate = useNavigate();
   const { setAuth } = useAuth();
 
   const { isLoading, mutate } = useMutation<any, any, any>({
@@ -45,7 +43,7 @@ const useLogin = () => {
         onSuccess: (data: any) => {
           if (data) {
             setAuth(data);
-            navigate("/");
+            window.location.href = '/'
           } else {
             showNotification({
               color: "red",
